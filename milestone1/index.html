@@ -1,175 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Resume Template</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Francois+One&family=Lilita+One&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="resume-container">
-      <!-- Left Column -->
-      <div class="left-column">
-        <!-- Profile Section -->
-        <section class="profile-section">
-          <img
-            id="profilePic"
-            src="images/resume.jpg"
-            alt="Profile Picture"
-            class="profile-pic"
-          />
-          <h1>Kulsoom Adnan</h1>
-          <div class="contact-info">
-            <p><span class="label">Email:</span> kulsoomadnan@gmail.com</p>
-            <p><span class="label">Phone:</span> (+92) 311-753932</p>
-            <p><span class="label">Location:</span> Pakistan, Karachi</p>
-          </div>
-        </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="job.png" type="image/x-icon" >
+  <title>Modern Resume Template</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Francois+One&family=Lilita+One&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Left Column -->
+    <div class="left-column">
+      <!-- Profile Section -->
+      <section class="profile-section">
+        <img id="profilePic" src="images/resume.jpg" alt="Profile Picture" class="profile-pic"/>
+        <h1>Kulsoom Adnan</h1>
+        <div class="contact-info">
+          <p><span class="label">Email:</span> kulsoomadnan@gmail.com</p>
+          <p><span class="label">Phone:</span> (+92) 311-753932</p>
+          <p><span class="label">Location:</span> Pakistan, Karachi</p>
+        </div>
+       </section>
 
-        <!-- Languages Section -->
-        <section class="languages-section">
-          <h2>Languages</h2>
-          <ul>
-            <li>urdu</li>
-            <li>English (Fluent)</li>
-          </ul>
-        </section>
+      <!-- Languages Section -->
+      <section class="languages-section">
+        <h2>Languages</h2>
+        <ul>
+          <li>urdu </li>
+          <li>English (Fluent)</li>
+        </ul>
+      </section>
 
-        <!-- Soft Skills Section -->
-        <section class="soft-skills-section">
-          <h2>Soft Skills</h2>
-          <ul>
-            <li>Effective Communication</li>
-            <li>Problem Solving</li>
-            <li>Time Management</li>
-            <li>Leadership</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- Right Column -->
-      <div class="right-column">
-        <!-- Personal Information Section -->
-        <section class="personal-info">
-          <h2>Personal Information</h2>
-          <p><strong>Birthday:</strong> June 18, 2005</p>
-          <p><strong>Address:</strong> 777 Main St, Pakistan, Karachi</p>
-          <p>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/kulsoomadnan/>" target="_blank"
-              >My LinkedIn Profile</a
-            >
-          </p>
-          <p>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/KULSOOMadnan" target="_blank"
-              >My GitHub Profile</a
-            >
-          </p>
-        </section>
-
-        <!-- Education Section -->
-        <section class="education-section">
-          <h2>Education</h2>
-          <p><strong>University:</strong> karachi University</p>
-          <p><strong>Degree:</strong> B.Sc. in Computer Science</p>
-          <p><strong>Graduation Year:</strong> 2023</p>
-        </section>
-
-        <!-- Skills Section with Toggle -->
-        <section class="skills-section">
-          <h2>Skills</h2>
-          <button id="skillsToggleBtn">Show</button>
-          <ul id="skillsList" class="hidden">
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>HTML & CSS</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Tailwind CSS</li>
-            <li>Bootstrap</li>
-          </ul>
-        </section>
-
-        <!-- Work Experience Section with Show More -->
-        <section class="work-experience">
-          <h2>Work Experience</h2>
-
-          <!-- Internship at Code Alpha -->
-          <div class="job" id="internship">
-            <p><strong>Company:</strong> Code Alpha</p>
-            <p><strong>Position:</strong> Web Development Intern</p>
-            <p><strong>Duration:</strong> August 2024 - Present</p>
-            <button id="showMoreBtn">Show More</button>
-            <div id="extraContent" class="hidden">
-              <div class="job-description">
-                <h2>Personal Projects</h2>
-
-                <!-- Portfolio Website -->
-                <div class="job" id="portfolio-website">
-                  <p><strong>Project 1:</strong> Portfolio Website</p>
-                  <p>
-                    <strong>Description:</strong> Built a dynamic and visually
-                    appealing personal portfolio website.
-                  </p>
-                  <ul>
-                    <li>
-                      Developed with Next.js for server-side rendering and
-                      optimized performance.
-                    </li>
-                    <li>
-                      Styled using Tailwind CSS for a modern and responsive
-                      design.
-                    </li>
-                    <li>
-                      Implemented animations and interactions with Framer Motion
-                      libraries to enhance user experience.
-                    </li>
-                    <li>
-                      Integrated a contact form with client-side validation and
-                      dynamic content sections.
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Food Delivery App -->
-                <div class="job" id="food-delivery-app">
-                  <p><strong>Project 2 :</strong> Food Delivery App</p>
-                  <p>
-                    <strong>Description:</strong> Developed a comprehensive food
-                    delivery application with real-time features.
-                  </p>
-                  <ul>
-                    <li>
-                      Built using Next.js for server-side rendering and SEO
-                      optimization.
-                    </li>
-                    <li>
-                      Styled with CSS to ensure a clean and user-friendly
-                      interface.
-                    </li>
-                    <li>
-                      Implemented real-time order tracking, payment processing,
-                      and restaurant reviews.
-                    </li>
-                    <li>
-                      Integrated with a backend API using Next.js API routes to
-                      handle user data and order management.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      <!-- Soft Skills Section -->
+      <section class="soft-skills-section">
+        <h2>Soft Skills</h2>
+        <ul>
+          <li>Effective Communication</li>
+          <li>Problem Solving</li>
+          <li>Time Management</li>
+          <li>Leadership</li>
+         
+        </ul>
+      </section>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Right Column -->
+    <div class="right-column">
+      <!-- Personal Information Section -->
+      <section class="personal-info">
+        <h2>Personal Information</h2>
+        <p><strong>Birthday:</strong> June 18, 2005</p>
+        <p><strong>Address:</strong> 777 Main St, Pakistan, Karachi</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kulsoomadnan/>" target="_blank">My LinkedIn Profile</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/KULSOOMadnan" target="_blank">My GitHub Profile</a></p>
+      </section>
+      
+
+      <!-- Education Section -->
+      <section class="education-section">
+        <h2>Education</h2>
+        <p><strong>University:</strong> karachi University</p>
+        <p><strong>Degree:</strong> B.Sc. in Computer Science</p>
+        <p><strong>Graduation Year:</strong> 2023</p>
+      </section>
+
+      <!-- Skills Section with Toggle -->
+      <section class="skills-section">
+        <h2>Skills </h2>
+        <button id="skillsToggleBtn">Show</button>
+        <ul id="skillsList" class="hidden">
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>HTML & CSS</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Tailwind CSS</li>
+          <li>Bootstrap</li>
+        </ul>
+      </section>
+      
+
+      <!-- Work Experience Section with Show More -->
+      <section class="work-experience">
+        <h2>Work Experience</h2>
+
+        <!-- Internship at Code Alpha -->
+        <div class="job" id="internship">
+          <p><strong>Company:</strong> Code Alpha</p>
+          <p><strong>Position:</strong> Web Development Intern</p>
+          <p><strong>Duration:</strong> August 2024 - Present</p>
+          <button id="showMoreBtn">Show More</button>
+            <div id="extraContent" class="hidden">
+            <div class="job-description">
+                <h2>Personal Projects</h2>
+                
+                 <!-- Portfolio Website -->
+                <div class="job" id="portfolio-website">
+                    <p><strong>Project 1:</strong> Portfolio Website</p>
+                    <p><strong>Description:</strong> Built a dynamic and visually appealing personal portfolio website.</p>
+                    <ul>
+                    <li>Developed with Next.js for server-side rendering and optimized performance.</li>
+                    <li>Styled using Tailwind CSS for a modern and responsive design.</li>
+                    <li>Implemented animations and interactions with Framer Motion libraries to enhance user experience.</li>
+                    <li>Integrated a contact form with client-side validation and dynamic content sections.</li>
+                    </ul>
+                </div>
+        
+                <!-- Food Delivery App -->
+                <div class="job" id="food-delivery-app">
+                    <p><strong>Project 2 :</strong> Food Delivery App</p>
+                    <p><strong>Description:</strong> Developed a comprehensive food delivery application with real-time features.</p>
+                    <ul>
+                    <li>Built using Next.js for server-side rendering and SEO optimization.</li>
+                    <li>Styled with CSS to ensure a clean and user-friendly interface.</li>
+                    <li>Implemented real-time order tracking, payment processing, and restaurant reviews.</li>
+                    <li>Integrated with a backend API using Next.js API routes to handle user data and order management.</li>
+                    </ul>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        
+       
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
