@@ -65,6 +65,7 @@ body {
 
 .languages-section h2,
 .soft-skills-section h2 {
+  font-family: "Francois One", sans-serif;
   color: white;
   margin-top: 20px;
   font-size: 18px;
@@ -97,6 +98,7 @@ body {
 
 /* Section Styles */
 h2 {
+  font-family: "Francois One", sans-serif;
   color: #094860;
   font-size: 20px;
   border-bottom: 2px solid #26596d;
@@ -252,14 +254,14 @@ section {
     width: 140px;
     height: 140px;
   }
-
+  
   .left-column h1 {
     font-size: 18px;
   }
 
   .languages-section h2,
   .soft-skills-section h2 {
-    font-size: 14px;
+    font-size: 23px;
   }
 
   ul {
