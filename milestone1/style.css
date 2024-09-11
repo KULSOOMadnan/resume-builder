@@ -34,7 +34,7 @@ body {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .left-column h1 {
@@ -201,8 +201,9 @@ section {
   }
 
   .profile-pic {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 2px;
   }
 
   .left-column h1 {
@@ -248,8 +249,8 @@ section {
     padding: 5px;
   }
   .profile-pic {
-    width: 70px;
-    height: 70px;
+    width: 140px;
+    height: 140px;
   }
 
   .left-column h1 {
@@ -296,8 +297,8 @@ section {
   }
 
   .profile-pic {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
   }
 
   .left-column h1 {
