@@ -135,14 +135,16 @@ function generateResume(): void {
      resumeSkills.innerHTML = skillsList.innerHTML;
     
 
-    /// Create a unique identifier for the resume
+    
+     /// Create a unique identifier for the resume
     const resumeId = Date.now().toString(); // Using timestamp as a simple unique ID
-    const resumeUrl = `?id=${resumeId}-${names}-resume`; // Updated URL format for current page
+    const resumeUrl = `?id=${resumeId}&names=${encodeURIComponent(names)}`;
+    
 
     // Display the resume URL
     const resumeUrlElement = document.getElementById("resumeUrl") as HTMLElement;
     resumeUrlElement.innerHTML = `Your Resume Url: <a href="${resumeUrl}" target="_blank">${resumeUrl}</a>`;
-
+ 
 
     // Save list items
     const languagesLis = document.getElementById('languagesList') as HTMLUListElement;
@@ -298,11 +300,13 @@ profilePicInput.addEventListener("change", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams)
     const resumeId = urlParams.get('id');
+    const names = urlParams.get('names');
 
-    if (resumeId) {
+    if (resumeId && names) {
+        // taking resume data from localStorage using a key based on resumeId
         const resumeData = localStorage.getItem(`resume_${resumeId}`);
+        
         if (resumeData) {
             const data = JSON.parse(resumeData);
            
