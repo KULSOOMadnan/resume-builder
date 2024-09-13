@@ -87,6 +87,11 @@ body {
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: bold;
+    
   }
   
   /* Right Column */
@@ -121,8 +126,11 @@ body {
     padding: 8px;
     margin: 5px 0;
     border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
   }
   
+   
   /* Style for the toggle button */
   #skillsToggleBtn {
     background-color: #094860;
@@ -359,6 +367,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: 'Lilita One', sans-serif;
+  font-weight: 300;
   background-color: #fff;
 }
 
@@ -397,6 +406,30 @@ button:hover {
 
 }
 
+.remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}
+
+
+.list-item {
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 3px 0;
+  padding: 3px 6px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* Media Queries for Responsive Form Section */
 @media (max-width: 768px) {
@@ -412,7 +445,7 @@ button:hover {
     width: calc(100% - 16px);
     padding: 8px;
   }
-
+  .remove-btn,
   button {
     padding: 8px 16px;
     font-size: 14px;
@@ -432,7 +465,7 @@ button:hover {
     width: calc(100% - 12px);
     padding: 6px;
   }
-
+  .remove-btn,
   button {
     padding: 6px 12px;
     font-size: 12px;
@@ -665,10 +698,6 @@ img.profile-pic {
     display: none;
   }
 
-  button {
-    visibility: hidden;
-  }
-
   #resume-section, #resume-section * {
       visibility: visible;
   }
@@ -713,7 +742,8 @@ img.profile-pic {
   }
 
   p, li {
-      font-size: 12px;
+      font-size: 10px;
+
   }
 
   /* Ensure the content fits on one page */
@@ -741,6 +771,11 @@ img.profile-pic {
   }
 
   .languages-section ul li, .soft-skills-section ul li, .skills-section ul li {
+      font-size: 10px;
       margin: 5px 0;
+  }
+
+  #resumeLink a , #resumeLink{
+    visibility: hidden;
   }
 }
