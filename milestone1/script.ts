@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   // Handle Skills toggle button click
-  const toggleBtn = document.getElementById(
-    "skillsToggleBtn"
-  ) as HTMLButtonElement;
+  const toggleBtn = document.getElementById( "skillsToggleBtn") as HTMLButtonElement;
   const skillsList = document.getElementById("skillsList") as HTMLElement;
 
   if (toggleBtn && skillsList) {
