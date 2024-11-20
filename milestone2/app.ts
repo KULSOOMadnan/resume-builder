@@ -1,5 +1,3 @@
-
-
 // Function to validate basic information
 function validateBasicInfo(): boolean {
     const requiredFields = [
@@ -13,6 +11,18 @@ function validateBasicInfo(): boolean {
         
     ];
 
+    function validateEmail(email : string) {
+        // Regular expression for validating an email address
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    const emailElement = document.getElementById('email') as HTMLInputElement;
+    const emailValue = emailElement?.value.trim();
+
+    if (!validateEmail(emailValue)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
     for (const fieldId of requiredFields) {
         const fieldElement = document.getElementById(fieldId) as HTMLInputElement | null;
         if (!fieldElement) {
@@ -89,7 +99,6 @@ function generateResume(): void {
     (document.getElementById("resumeAddress") as HTMLElement).textContent = address;
     (document.getElementById("resumeaboutMe") as HTMLElement).textContent = aboutMe; //
     (document.getElementById("resumeLinkedIn") as HTMLAnchorElement).href = linkedin;
-    
     (document.getElementById("resumeUniversity") as HTMLElement).textContent = university;
     (document.getElementById("resumeDegree") as HTMLElement).textContent = degree;
     (document.getElementById("resumeGradYear") as HTMLElement).textContent = gradYear;
@@ -100,14 +109,14 @@ function generateResume(): void {
     (document.getElementById("resumeProject1") as HTMLElement).textContent = project1;
     (document.getElementById("resumeProject1Desc") as HTMLElement).textContent = project1Desc;
 
-    if(!project1 || !project1Desc || !company || !position  || !duration || !gradYear){
-        (document.getElementById("resumeProject1") as HTMLElement).textContent = '-';
-        (document.getElementById("resumeProject1Desc") as HTMLElement).textContent = '-';
-        (document.getElementById("resumeGradYear") as HTMLElement).textContent = '-';
-        (document.getElementById("resumeCompany") as HTMLElement).textContent = '-';
-        (document.getElementById("resumePosition") as HTMLElement).textContent = '';
-        (document.getElementById("resumeDuration") as HTMLElement).textContent = '-';
-    }
+    // if(!project1 || !project1Desc || !company || !position  || !duration || !gradYear){
+    //     (document.getElementById("resumeProject1") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeProject1Desc") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeGradYear") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeCompany") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumePosition") as HTMLElement).textContent = '';
+    //     (document.getElementById("resumeDuration") as HTMLElement).textContent = '-';
+    // }
 
     // remove btn and li class
     const listitem = document.querySelectorAll(".list-item .remove-btn") as NodeListOf<HTMLLIElement>;
@@ -164,14 +173,16 @@ function generateResume(): void {
     };
     localStorage.setItem(`resume_${resumeId}`, JSON.stringify(resumeData));
 
+    // const resumeData = getFormData(); 
+
 
     // Switch to the resume section
+    
     (document.getElementById("form-section") as HTMLElement).style.display = "none";
     (document.getElementById("resume-section") as HTMLElement).style.display = "block";
 
     
 }
-
 
 function addLanguages(): void {
     const languagesInput = document.getElementById('languages') as HTMLInputElement;
@@ -217,7 +228,7 @@ function addSoftSkills(): void {
         li.appendChild(span);
 
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Remove language';
+        removeBtn.textContent = 'Remove Skill';
         removeBtn.classList.add('remove-btn'); 
 
         removeBtn.onclick = function () {
@@ -252,7 +263,7 @@ function addSkills(): void {
         li.appendChild(span);
 
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Remove language';
+        removeBtn.textContent = 'Remove Skill';
         removeBtn.classList.add('remove-btn'); 
 
         removeBtn.onclick = function () {
@@ -281,6 +292,7 @@ profilePicInput.addEventListener("change", function () {
     const file = profilePicInput.files?.[0];
     if (file) {
         const reader = new FileReader();
+        console.log(reader);
         reader.onload = function (e) {
             const preview = document.getElementById("profilePicPreview") as HTMLImageElement;
             preview.src = e.target?.result as string;
@@ -366,6 +378,37 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const savedFormData = localStorage.getItem('formData');
+    if (savedFormData) {
+        const data = JSON.parse(savedFormData);
 
+        (document.getElementById("name") as HTMLInputElement).value = data.name || '';
+        (document.getElementById("email") as HTMLInputElement).value = data.email || '';
+        (document.getElementById("phone") as HTMLInputElement).value = data.phone || '';
+        (document.getElementById("birthday") as HTMLInputElement).value = data.birthday || '';
+        (document.getElementById("address") as HTMLInputElement).value = data.address || '';
+        (document.getElementById("university") as HTMLInputElement).value = data.university || '';
+        (document.getElementById("degree") as HTMLInputElement).value = data.degree || '';
+        (document.getElementById("aboutme") as HTMLInputElement).value = data.aboutMe || '';
+        (document.getElementById("gradYear") as HTMLInputElement).value = data.gradYear || '';
+        (document.getElementById("company") as HTMLInputElement).value = data.company || '';
+        (document.getElementById("position") as HTMLInputElement).value = data.position || '';
+        (document.getElementById("duration") as HTMLInputElement).value = data.duration || '';
+        (document.getElementById("description") as HTMLInputElement).value = data.description || '';
+        (document.getElementById("project1") as HTMLInputElement).value = data.project1 || '';
+        (document.getElementById("project1Desc") as HTMLInputElement).value = data.project1Desc || '';
+        (document.getElementById("linkedin") as HTMLInputElement).value = data.linkedin || '';
+        (document.getElementById('languagesList') as HTMLUListElement).innerHTML = data.languagesList || '';
+        (document.getElementById('softSkillsList') as HTMLUListElement).innerHTML = data.softSkillsList || '';
+        (document.getElementById('skillsList') as HTMLUListElement).innerHTML = data.skillsList || '';
+        (document.getElementById("profilePicPreview") as HTMLImageElement).src = data.profilePicPreviewSrc || '';
+
+        // Clear form data from localStorage once the resume is generated
+        if (window.location.search.includes('id=')) {
+            localStorage.removeItem('formData');
+        }
+    }
+    });
 
 

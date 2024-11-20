@@ -12,208 +12,258 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
   </head>
   <body>
-    <!-- form section  -->
-    <div id="form-section">
-      <h1> Resume Builder </h1>
+    
+      <!-- form section  -->
+      <div id="form-section">
+        <h1>Resume Builder</h1>
 
-      <!-- Profile Picture Upload -->
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-        <img id="profilePicPreview" src="" alt="Profile Preview" style="width: 140px; height: 140px; border-radius: 50%;" />
-        <label class="custom-file-upload">
-          Choose Profile Picture
-          <input type="file" id="profilePicInput" accept="image/*" />
-        </label>
+        <!-- Profile Picture Upload -->
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+          <img
+            id="profilePicPreview"
+            src=""
+            alt="Profile Preview"
+            style="width: 140px; height: 140px; border-radius: 50%"
+          />
+          <label class="custom-file-upload">
+            Choose Profile Picture
+            <input type="file" id="profilePicInput" accept="image/*" />
+          </label>
+        </div>
+
+        <!-- Personal Information -->
+        <div>
+          <h3>Personal Information</h3>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" required placeholder="John Doe" /><br />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="name23@gmail.com"
+          /><br />
+
+          <label for="phone">Phone:</label>
+          <input
+            type="text"
+            id="phone"
+            required
+            placeholder="1234567890"
+          /><br />
+
+          <label for="birthday">Birthday:</label>
+          <input
+            type="date"
+            id="birthday"
+            required
+            placeholder="MM/DD/YYYY"
+          /><br />
+
+          <label for="sboutme">About me :</label>
+          <textarea
+            id="aboutme"
+            placeholder="Enter a brief introduction of yourself "
+          ></textarea
+          ><br />
+
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            required
+            placeholder="123 Main St, City, Country"
+          /><br />
+
+          <label for="linkedin">LinkedIn Url:</label>
+          <input
+            type="text"
+            id="linkedin"
+            placeholder="https://www.linkedin.com/in/username"
+          /><br />
+        </div>
+
+        <!-- Languages Section -->
+        <div>
+          <h3>Languages</h3>
+          <input
+            type="text"
+            id="languages"
+            placeholder="E.g., English (Fluent), Urdu"
+          />
+          <button type="button" onclick="addLanguages()">Add Languages</button>
+          <ul id="languagesList"></ul>
+        </div>
+
+        <!-- Soft Skills Section -->
+        <div>
+          <h3>Soft Skills</h3>
+          <input
+            type="text"
+            id="softSkills"
+            placeholder="E.g., Communication, Time Management"
+          />
+          <button type="button" onclick="addSoftSkills()">
+            Add Soft Skills
+          </button>
+          <ul id="softSkillsList"></ul>
+        </div>
+
+        <!-- Skills Section -->
+        <div>
+          <h3>Skills</h3>
+          <input
+            type="text"
+            id="skills"
+            placeholder="E.g., JavaScript, HTML, CSS"
+          />
+          <button type="button" onclick="addSkills()">Add Skills</button>
+          <ul id="skillsList"></ul>
+        </div>
+
+        <!-- Education Section -->
+        <div>
+          <h3>Education</h3>
+          <label for="university">University:</label>
+          <input
+            type="text"
+            id="university"
+            required
+            placeholder="Enter your university name"
+          /><br />
+
+          <label for="degree">Degree:</label>
+          <input
+            type="text"
+            id="degree"
+            placeholder="Enter your degree"
+          /><br />
+
+          <label for="gradYear">Graduation Year:</label>
+          <input
+            type="text"
+            id="gradYear"
+            placeholder="Enter your graduation year"
+          /><br />
+        </div>
+
+        <!-- Work Experience Section -->
+        <div>
+          <h3>Work Experience</h3>
+          <label for="company">Company:</label>
+          <input type="text" id="company" /><br />
+
+          <label for="position">Position:</label>
+          <input type="text" id="position" /><br />
+
+          <label for="duration">Duration:</label>
+          <input type="text" id="duration" /><br />
+
+          <label for="description">Description:</label>
+          <textarea id="description"></textarea><br />
+        </div>
+
+        <!-- Projects Section -->
+        <div>
+          <h3>Projects</h3>
+          <label for="project1">Project :</label>
+          <input type="text" id="project1" placeholder="Project Name" /><br />
+          <label for="project1Desc">Project Description:</label>
+          <textarea
+            id="project1Desc"
+            placeholder="Project Description"
+          ></textarea
+          ><br />
+        </div>
+
+        <!-- Resume Generator Button -->
+        <div class="resumebtn">
+          <button type="submit" onclick="generateResume()">
+            Generate Resume
+          </button>
+        </div>
       </div>
     
 
-      <!-- Personal Information -->
-      <div>
-        <h3> Personal Information </h3>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" required placeholder="John Doe"/><br />
-    
-        <label for="email">Email:</label>
-        <input type="email" id="email" required placeholder="name23@gmail.com"/><br />
-    
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" required placeholder="1234567890"/><br />
-    
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" required placeholder="MM/DD/YYYY"/><br />
-
-        <label for="description">About me :</label>
-        <textarea id="aboutme" placeholder="Enter a brief introduction of yourself "></textarea><br />
-    
-        <label for="address">Address:</label>
-        <input type="text" id="address" required placeholder="123 Main St, City, Country"/><br />
-    
-        <label for="linkedin">LinkedIn Url:</label>
-        <input type="url" id="linkedin" required placeholder="https://www.linkedin.com/in/username"/><br />
-       </div>
-    
-      <!-- Languages Section -->
-      <div>
-        <h3>Languages</h3>
-        <input
-          type="text"
-          id="languages"
-          placeholder="E.g., English (Fluent), Urdu"
-          required
-        />
-        <button type="button" onclick="addLanguages()">Add Languages</button>
-        <ul id="languagesList"></ul>
-      </div>
-
-      <!-- Soft Skills Section -->
-      <div>
-        <h3>Soft Skills</h3>
-        <input
-          type="text"
-          id="softSkills"
-          placeholder="E.g., Communication, Time Management"
-          required
-        />
-        <button type="button" onclick="addSoftSkills()">Add Soft Skills</button>
-        <ul id="softSkillsList"></ul>
-      </div>
-
-      <!-- Skills Section -->
-      <div>
-        <h3>Skills</h3>
-        <input
-          type="text"
-          id="skills"
-          placeholder="E.g., JavaScript, HTML, CSS"
-          required
-        />
-        <button type="button" onclick="addSkills()">Add Skills</button>
-        <ul id="skillsList"></ul>
-      </div>
-
-      <!-- Education Section -->
-      <div>
-        <h3>Education</h3>
-        <label for="university">University:</label>
-        <input type="text" id="university" required placeholder="Enter your university name" /><br />
-    
-        <label for="degree">Degree:</label>
-        <input type="text" id="degree" placeholder="Enter your degree" /><br />
-    
-        <label for="gradYear">Graduation Year:</label>
-        <input type="text" id="gradYear" placeholder="Enter your graduation year" /><br />
-      </div>
-    
-
-      <!-- Work Experience Section -->
-      <div>
-        <h3>Work Experience</h3>
-        <label for="company">Company:</label>
-        <input type="text" id="company"  /><br />
-    
-        <label for="position">Position:</label>
-        <input type="text" id="position"/><br />
-    
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" /><br />
-    
-        <label for="description">Description:</label>
-        <textarea id="description" ></textarea><br />
-      </div>
-    
-
-      <!-- Projects Section -->
-      <div>
-        <h3>Projects</h3>
-        <label for="project1" >Project :</label>
-        <input type="text" id="project1" placeholder="Project Name" /><br />
-        <label for="project1Desc">Project  Description:</label>
-        <textarea id="project1Desc" placeholder="Project Description"></textarea><br />
-        
-      </div>
-      
-      <!-- Resume Generator Button -->
-      <div class="resumebtn" >
-        <button type="submit" onclick="generateResume()">Generate Resume</button>
-      </div>
-    </div>
-
-     <!-- Resume Preview Section -->
-     <div id="resume-section" style="display: none">
+    <!-- Resume Preview Section -->
+    <div id="resume-section" style="display: none">
       <div class="resume-container">
-      <div class="left-column">
+        <div class="left-column">
           <img id="resumeProfilePic" class="profile-pic" src="" alt="Profile" />
           <h1 id="resumeName"></h1>
           <div class="contact-info">
-          <p><strong>Email:</strong> <span id="resumeEmail"></span></p>
-          <p><strong>Phone:</strong> <span id="resumePhone"></span></p>
-          
+            <p><strong>Email:</strong> <span id="resumeEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="resumePhone"></span></p>
           </div>
           <section class="languages-section">
-          <h2>Languages</h2>
-          <ul id="resumeLanguages"></ul>
+            <h2>Languages</h2>
+            <ul id="resumeLanguages"></ul>
           </section>
           <section class="soft-skills-section">
-          <h2>Soft Skills</h2>
-          <ul id="resumeSoftSkills"></ul>
+            <h2>Soft Skills</h2>
+            <ul id="resumeSoftSkills"></ul>
           </section>
-      </div>
-      <div class="right-column">
+        </div>
+        <div class="right-column">
           <section class="personal-info">
-          <h2>Personal Information</h2>
-          <p> <strong>About me : <span id="resumeaboutMe"></span></strong></p>
-          <p><strong>Birthday:</strong> <span id="resumeBirthday"></span></p>
-          <p><strong>Address:</strong> <span id="resumeAddress"></span></p>
-          <p>
+            <h2>Personal Information</h2>
+            <p>
+              <strong>About me : <span id="resumeaboutMe"></span></strong>
+            </p>
+            <p><strong>Birthday:</strong> <span id="resumeBirthday"></span></p>
+            <p><strong>Address:</strong> <span id="resumeAddress"></span></p>
+            <p>
               <strong>LinkedIn:</strong>
-              <a id="resumeLinkedIn" href="" target="_blank"> LinkedIn Profile</a>
-          </p>
+              <a id="resumeLinkedIn" href="" target="_blank">
+                LinkedIn Profile</a
+              >
+            </p>
           </section>
           <section class="education-section">
-          <h2>Education</h2>
-          <p>
+            <h2>Education</h2>
+            <p>
               <strong>University:</strong> <span id="resumeUniversity"></span>
-          </p>
-          <p><strong>Degree:</strong> <span id="resumeDegree"></span></p>
-          <p>
+            </p>
+            <p><strong>Degree:</strong> <span id="resumeDegree"></span></p>
+            <p>
               <strong>Graduation Year:</strong>
               <span id="resumeGradYear"></span>
-          </p>
+            </p>
           </section>
           <section class="skills-section">
-          <h2>Skills</h2>
-          <ul id="resumeSkills"></ul>
+            <h2>Skills</h2>
+            <ul id="resumeSkills"></ul>
           </section>
           <section class="work-experience">
-          <h2>Work Experience</h2>
-          <p><strong>Company:</strong> <span id="resumeCompany"></span></p>
-          <p><strong>Position:</strong> <span id="resumePosition"></span></p>
-          <p><strong>Duration:</strong> <span id="resumeDuration"></span></p>
-          <p>
+            <h2>Work Experience</h2>
+            <p><strong>Company:</strong> <span id="resumeCompany"></span></p>
+            <p><strong>Position:</strong> <span id="resumePosition"></span></p>
+            <p><strong>Duration:</strong> <span id="resumeDuration"></span></p>
+            <p>
               <strong>Description:</strong> <span id="resumeDescription"></span>
-          </p>
+            </p>
           </section>
           <section class="projects-section">
-          <h2>Projects</h2>
-          <p><strong>Project :</strong> <span id="resumeProject1"></span></p>
-          <p>
+            <h2>Projects</h2>
+            <p><strong>Project :</strong> <span id="resumeProject1"></span></p>
+            <p>
               <strong>Description:</strong>
               <span id="resumeProject1Desc"></span>
-          </p>
+            </p>
           </section>
-      </div>
+        </div>
       </div>
       <div class="editbtn">
-      <button class="hi" onclick="editResume()">Edit Resume</button>
-      <button  onclick="downloadPDF()">Download as PDF</button>
+        <button class="hi" onclick="editResume()">Edit Resume</button>
+        <button onclick="downloadPDF()">Download as PDF</button>
       </div>
       <!-- <p id="resumeLink" ></p> -->
       <p id="resumeUrl"></p>
-     </div>
+    </div>
 
-    
     <script src="app.js"></script>
   </body>
 </html>

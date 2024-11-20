@@ -10,6 +10,17 @@ function validateBasicInfo() {
         'profilePicInput',
         'aboutme'
     ];
+    function validateEmail(email) {
+        // Regular expression for validating an email address
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+    const emailElement = document.getElementById('email');
+    const emailValue = emailElement?.value.trim();
+    if (!validateEmail(emailValue)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
     for (const fieldId of requiredFields) {
         const fieldElement = document.getElementById(fieldId);
         if (!fieldElement) {
@@ -84,14 +95,14 @@ function generateResume() {
     document.getElementById("resumeDescription").textContent = description;
     document.getElementById("resumeProject1").textContent = project1;
     document.getElementById("resumeProject1Desc").textContent = project1Desc;
-    if (!project1 || !project1Desc || !company || !position || !duration || !gradYear) {
-        document.getElementById("resumeProject1").textContent = '-';
-        document.getElementById("resumeProject1Desc").textContent = '-';
-        document.getElementById("resumeGradYear").textContent = '-';
-        document.getElementById("resumeCompany").textContent = '-';
-        document.getElementById("resumePosition").textContent = '';
-        document.getElementById("resumeDuration").textContent = '-';
-    }
+    // if(!project1 || !project1Desc || !company || !position  || !duration || !gradYear){
+    //     (document.getElementById("resumeProject1") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeProject1Desc") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeGradYear") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumeCompany") as HTMLElement).textContent = '-';
+    //     (document.getElementById("resumePosition") as HTMLElement).textContent = '';
+    //     (document.getElementById("resumeDuration") as HTMLElement).textContent = '-';
+    // }
     // remove btn and li class
     const listitem = document.querySelectorAll(".list-item .remove-btn");
     listitem.forEach(item => {
@@ -133,6 +144,7 @@ function generateResume() {
         languages, skills, softSkills
     };
     localStorage.setItem(`resume_${resumeId}`, JSON.stringify(resumeData));
+    // const resumeData = getFormData(); 
     // Switch to the resume section
     document.getElementById("form-section").style.display = "none";
     document.getElementById("resume-section").style.display = "block";
@@ -170,7 +182,7 @@ function addSoftSkills() {
         span.textContent = skill;
         li.appendChild(span);
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Remove language';
+        removeBtn.textContent = 'Remove Skill';
         removeBtn.classList.add('remove-btn');
         removeBtn.onclick = function () {
             softSkillsList.removeChild(li); // Remove the li element
@@ -199,7 +211,7 @@ function addSkills() {
         span.textContent = skill;
         li.appendChild(span);
         const removeBtn = document.createElement('button');
-        removeBtn.textContent = 'Remove language';
+        removeBtn.textContent = 'Remove Skill';
         removeBtn.classList.add('remove-btn');
         removeBtn.onclick = function () {
             skillsList.removeChild(li); // Remove the li element
@@ -223,6 +235,7 @@ profilePicInput.addEventListener("change", function () {
     const file = profilePicInput.files?.[0];
     if (file) {
         const reader = new FileReader();
+        console.log(reader);
         reader.onload = function (e) {
             const preview = document.getElementById("profilePicPreview");
             preview.src = e.target?.result;
@@ -292,6 +305,36 @@ document.addEventListener("DOMContentLoaded", function () {
         else {
             // Handle case where resume data is not found
             alert("Resume data not found.");
+        }
+    }
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const savedFormData = localStorage.getItem('formData');
+    if (savedFormData) {
+        const data = JSON.parse(savedFormData);
+        document.getElementById("name").value = data.name || '';
+        document.getElementById("email").value = data.email || '';
+        document.getElementById("phone").value = data.phone || '';
+        document.getElementById("birthday").value = data.birthday || '';
+        document.getElementById("address").value = data.address || '';
+        document.getElementById("university").value = data.university || '';
+        document.getElementById("degree").value = data.degree || '';
+        document.getElementById("aboutme").value = data.aboutMe || '';
+        document.getElementById("gradYear").value = data.gradYear || '';
+        document.getElementById("company").value = data.company || '';
+        document.getElementById("position").value = data.position || '';
+        document.getElementById("duration").value = data.duration || '';
+        document.getElementById("description").value = data.description || '';
+        document.getElementById("project1").value = data.project1 || '';
+        document.getElementById("project1Desc").value = data.project1Desc || '';
+        document.getElementById("linkedin").value = data.linkedin || '';
+        document.getElementById('languagesList').innerHTML = data.languagesList || '';
+        document.getElementById('softSkillsList').innerHTML = data.softSkillsList || '';
+        document.getElementById('skillsList').innerHTML = data.skillsList || '';
+        document.getElementById("profilePicPreview").src = data.profilePicPreviewSrc || '';
+        // Clear form data from localStorage once the resume is generated
+        if (window.location.search.includes('id=')) {
+            localStorage.removeItem('formData');
         }
     }
 });

@@ -1,339 +1,343 @@
 /* General Styles */
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 100%;
+}
+#languagesList , #skillsList ,#softSkillsList {
+  padding: 0;
+}
+.resume-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Left Column */
+.left-column {
+  flex: 1;
+  background-color: #094860;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 5px;
+}
+
+.left-column h1 {
+  font-family: "Francois One", sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* contact info  */
+
+.contact-info {
+  text-align: center;
+  font-size: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.left-column p {
+  margin: 5px 0;
+}
+
+.languages-section h2,
+.soft-skills-section h2 {
+  font-family: "Francois One", sans-serif;
+  color: white;
+  margin-top: 20px;
+  font-size: 18px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+.languages-section ul,
+.soft-skills-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.languages-section ul li,
+.soft-skills-section ul li {
+  background-color: #ffffff;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Right Column */
+.right-column {
+  flex: 2;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styles */
+h2 {
+  font-family: "Francois One", sans-serif;
+  color: #094860;
+  font-size: 20px;
+  border-bottom: 2px solid #26596d;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+/* Skills Section */
+.skills-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-section ul li {
+  background-color: #f0f0f0;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Style for the toggle button */
+#skillsToggleBtn {
+  background-color: #094860;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#skillsToggleBtn:hover {
+  background-color: #05364a;
+}
+
+/* Style for hidden elements */
+.hidden {
+  display: none;
+}
+
+/* Job Section */
+.job {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.job ul {
+  padding-left: 20px;
+}
+
+.job ul li {
+  list-style-type: disc;
+}
+
+/* Add styles for Show More Button and hidden content */
+.hidden {
+  display: none;
+}
+
+#showMoreBtn {
+  background-color: #094860;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+#showMoreBtn:hover {
+  background-color: #05364a;
+}
+
+#extraContent {
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
   .resume-container {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden; 
-  }
-  
-  /* Left Column */
-  .left-column {
-    flex: 1;
-    background-color: #094860;
-    color: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 10px 0 0 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 5px;
-  }
-  
-  .left-column h1 {
-    font-family: "Francois One", sans-serif;
-    font-size: 24px;
-    margin-bottom: 10px;
-    
-  }
-  
-  /* contact info  */
-  
-  .contact-info {
-    text-align: center;
-    font-size: 15px;
-  }
-  
-  .contact-info p {
-    margin: 5px 0;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .left-column p {
-    margin: 5px 0;
-  }
-  
-  .languages-section h2,
-  .soft-skills-section h2 {
-    font-family: "Francois One", sans-serif;
-    color: white;
-    margin-top: 20px;
-    font-size: 18px;
-    border-bottom: 2px solid white;
-    padding-bottom: 5px;
-  }
-  
-  .languages-section ul,
-  .soft-skills-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  .languages-section ul li,
-  .soft-skills-section ul li {
-    background-color: #ffffff;
-    color: black;
-    padding: 8px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    font-size: 17px;
-    font-weight: bold;
-    
-  }
-  
-  /* Right Column */
-  .right-column {
-    flex: 2;
-    padding: 20px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Section Styles */
-  h2 {
-    font-family: "Francois One", sans-serif;
-    color: #094860;
-    font-size: 20px;
-    border-bottom: 2px solid #26596d;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-  }
-  
-  /* Skills Section */
-  .skills-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .skills-section ul li {
-    background-color: #f0f0f0;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-    font-size: 17px;
-    font-weight: bold;
-  }
-  
-   
-  /* Style for the toggle button */
-  #skillsToggleBtn {
-    background-color: #094860;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 10px;
-  }
-  
-  #skillsToggleBtn:hover {
-    background-color: #05364a;
-  }
-  
-  /* Style for hidden elements */
-  .hidden {
-    display: none;
-  }
-  
-  /* Job Section */
-  .job {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  .job ul {
-    padding-left: 20px;
-  }
-  
-  .job ul li {
-    list-style-type: disc;
-  }
-  
-  /* Add styles for Show More Button and hidden content */
-  .hidden {
-    display: none;
-  }
-  
-  #showMoreBtn {
-    background-color: #094860;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-  
-  #showMoreBtn:hover {
-    background-color: #05364a;
-  }
-  
-  #extraContent {
-    margin-top: 10px;
-  }
-  
-  /* Media Queries for Responsive Design */
-  @media (max-width: 768px) {
-    .resume-container {
-      flex-direction: column;
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-  
-    .left-column,
-    .right-column {
-      flex: none;
-      width: 100%;
-      box-sizing: border-box;
-      box-shadow: none;
-      border-radius: 0;
-      padding: 10px;
-    }
-  
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      margin-bottom: 2px;
-    }
-  
-    .left-column h1 {
-      font-size: 20px;
-    }
-  
-    ul {
-      padding-left: 20px; /* Adds padding to list items */
-    }
-    .languages-section h2,
-    .soft-skills-section h2 {
-      font-size: 16px;
-    }
-  
-    .skills-section ul li,
-    .job {
-      padding: 6px;
-      font-size: 14px;
-    }
-  
-    #skillsToggleBtn,
-    #showMoreBtn {
-      font-size: 12px;
-      padding: 6px 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .resume-container {
-      flex-direction: column;
-      width: 100%;
-      padding: 5px;
-      box-sizing: border-box;
-    }
-  
-    .left-column,
-    .right-column {
-      flex: none;
-      width: 100%;
-      box-shadow: none;
-      box-sizing: border-box;
-      border-radius: 0;
-      padding: 5px;
-    }
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-    }
-    
-    .left-column h1 {
-      font-size: 24px;
-    }
-  
-    .languages-section h2,
-    .soft-skills-section h2 {
-      font-size: 20px;
-    }
-  
-    ul {
-      padding-left: 20px;
-    }
-    .skills-section ul li,
-    .job {
-      padding: 5px;
-      font-size: 12px;
-    }
-  
-    #skillsToggleBtn,
-    #showMoreBtn {
-      font-size: 10px;
-      padding: 5px 8px;
-    }
-  }
-  
-  /* Media Queries for Large Screens */
-  @media (min-width: 1200px) {
-    .resume-container {
-      width: 90%;
-      max-width: 1400px;
-    }
-  
-    h2 {
-      font-size: 25px;
-    }
-    .left-column {
-      padding: 40px;
-    }
-  
-    .right-column {
-      padding: 40px;
-    }
-  
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-    }
-  
-    .left-column h1 {
-      font-size: 28px;
-    }
-  
-    .languages-section h2,
-    .soft-skills-section h2 {
-      font-size: 24px;
-    }
-  
-    .skills-section ul li,
-    .job {
-      padding: 12px;
-      font-size: 16px;
-    }
-  
-    #skillsToggleBtn,
-    #showMoreBtn {
-      font-size: 18px;
-      padding: 12px 18px;
-    }
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
-  /* General form styling */
+  .left-column,
+  .right-column {
+    flex: none;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 10px;
+  }
+
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2px;
+  }
+
+  .left-column h1 {
+    font-size: 20px;
+  }
+
+  /* ul {
+    padding-left: 20px; Adds padding to list items 
+  } */
+  .languages-section h2,
+  .soft-skills-section h2 {
+    font-size: 16px;
+  }
+
+  .skills-section ul li,
+  .job {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  #skillsToggleBtn,
+  #showMoreBtn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .left-column,
+  .right-column {
+    flex: none;
+    width: 100%;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 5px;
+  }
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+  }
+
+  .left-column h1 {
+    font-size: 24px;
+  }
+
+  .languages-section h2,
+  .soft-skills-section h2 {
+    font-size: 20px;
+  }
+/* 
+  ul {
+    padding-left: 20px;
+  } */
+
+  .skills-section ul li,
+  .job {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  #skillsToggleBtn,
+  #showMoreBtn {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+
+/* Media Queries for Large Screens */
+@media (min-width: 1200px) {
+  .resume-container {
+    width: 90%;
+    max-width: 1400px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+  .left-column {
+    padding: 40px;
+  }
+
+  .right-column {
+    padding: 40px;
+  }
+
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+  }
+
+  .left-column h1 {
+    font-size: 28px;
+  }
+
+  .languages-section h2,
+  .soft-skills-section h2 {
+    font-size: 24px;
+  }
+
+  .skills-section ul li,
+  .job {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  #skillsToggleBtn,
+  #showMoreBtn {
+    font-size: 18px;
+    padding: 12px 18px;
+  }
+}
+
+/* General form styling */
 #form-section {
   width: 80%;
   max-width: 1400px;
@@ -346,12 +350,12 @@ body {
 
 h1 {
   text-align: center;
-  font-family: 'Francois One', sans-serif;
+  font-family: "Francois One", sans-serif;
   color: #363434;
 }
 
 label {
-  font-family: 'Francois One', sans-serif;
+  font-family: "Francois One", sans-serif;
   color: #555;
   margin-top: 10px;
 }
@@ -366,7 +370,7 @@ textarea {
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: 'Lilita One', sans-serif;
+  font-family: "Lilita One", sans-serif;
   font-weight: 300;
   background-color: #fff;
 }
@@ -380,7 +384,7 @@ input[type="file"] {
 }
 
 h3 {
-  font-family: 'Francois One', sans-serif;
+  font-family: "Francois One", sans-serif;
   margin-top: 20px;
   color: #666;
 }
@@ -398,19 +402,21 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 10px 0;
-  font-family: 'Francois One', sans-serif;
+  font-family: "Francois One", sans-serif;
 }
 
 button:hover {
   background-color: #05364a;
-
 }
 
 .remove-btn {
+  height: 25px;
   background-color: red;
   color: white;
+  /* text-align: center ; */
   border: none;
-  padding: 5px 10px;
+  font-size: 12px;
+  padding: 2px 8px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -419,10 +425,10 @@ button:hover {
   background-color: darkred;
 }
 
-
 .list-item {
   border-radius: 5px;
-  font-size: 18px;
+  height: 25px;
+  font-size: 13px;
   margin: 3px 0;
   padding: 3px 6px;
   background-color: #f1f1f1;
@@ -436,7 +442,7 @@ button:hover {
   #form-section {
     padding: 15px;
   }
-  
+
   input[type="text"],
   input[type="email"],
   input[type="url"],
@@ -445,11 +451,12 @@ button:hover {
     width: calc(100% - 16px);
     padding: 8px;
   }
-  .remove-btn,
+  
   button {
     padding: 8px 16px;
     font-size: 14px;
   }
+  
 }
 
 @media (max-width: 480px) {
@@ -465,13 +472,19 @@ button:hover {
     width: calc(100% - 12px);
     padding: 6px;
   }
-  .remove-btn,
+  
   button {
     padding: 6px 12px;
     font-size: 12px;
   }
+  .remove-btn{
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+  .list-item {
+    font-size: 12px;
+  }
 }
-
 
 /* Preview section */
 #resume-section {
@@ -481,7 +494,7 @@ button:hover {
   margin: 0 auto;
 }
 
-#resume-section h1{
+#resume-section h1 {
   color: white;
 }
 .resume-container {
@@ -490,15 +503,13 @@ button:hover {
   justify-content: space-between;
 }
 
-
 .right-column {
   flex-basis: 8%;
 }
 
-
 h2 {
   color: #05364a;
-  font-family: 'Francois One', sans-serif;
+  font-family: "Francois One", sans-serif;
 }
 
 .profile-pic {
@@ -515,9 +526,8 @@ h2 {
   margin: 5px 0;
 }
 
-
-
-#form-section, #resume-section {
+#form-section,
+#resume-section {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
@@ -526,11 +536,13 @@ h2 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h3 {
-  font-family: 'Francois One', sans-serif;
+h1,
+h3 {
+  font-family: "Francois One", sans-serif;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;
@@ -538,20 +550,20 @@ input, textarea {
   border-radius: 4px;
 }
 
-input.error, textarea.error {
+input.error,
+textarea.error {
   border-color: red;
 }
 
-.resumebtn{
+.resumebtn {
   display: flex;
   justify-content: space-around;
 }
 
-.editbtn{
-  display: flex ;
+.editbtn {
+  display: flex;
   justify-content: flex-end;
   gap: 40px;
-
 }
 button {
   padding: 10px 20px;
@@ -563,11 +575,10 @@ button {
 }
 
 button:hover {
-  background-color: #05364a ;
+  background-color: #05364a;
 }
 
 img.profile-pic {
-  
   border-radius: 50%;
 }
 
@@ -581,7 +592,7 @@ img.profile-pic {
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
-  background-color: #094860;;
+  background-color: #094860;
   color: #ffffff;
   border-radius: 4px;
 }
@@ -589,7 +600,6 @@ img.profile-pic {
 .custom-file-upload:hover {
   background-color: #05364a;
 }
-
 
 /* Media Queries for Responsive Resume Section */
 @media (max-width: 768px) {
@@ -613,7 +623,7 @@ img.profile-pic {
   h2 {
     font-size: 18px;
   }
-  
+
   .skills-section ul li,
   .job {
     padding: 6px;
@@ -629,14 +639,11 @@ img.profile-pic {
   button {
     padding: 8px 15px;
   }
-  
-  .editbtn{
-    
+
+  .editbtn {
     display: flex;
     justify-content: flex-end;
-  
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -674,23 +681,19 @@ img.profile-pic {
 
   button {
     padding: 5px 10px;
-
   }
 
-  .editbtn{
-    display: flex ;
+  .editbtn {
+    display: flex;
     justify-content: space-around;
     gap: 60px;
-  
   }
-  
 }
-
 
 @media print {
   /* Make all content visible */
 
-  *{
+  * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -698,84 +701,95 @@ img.profile-pic {
     display: none;
   }
 
-  #resume-section, #resume-section * {
-      visibility: visible;
+  #resume-section,
+  #resume-section * {
+    visibility: visible;
   }
 
   #resume-section {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   /* Maintain the layout of the left and right columns */
-  .left-column, .right-column {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      box-shadow: none;
+  .left-column,
+  .right-column {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
   }
 
   /* Reduce padding, margin, and font size for printing */
-   .resume-container .left-column {
-      background-color: #094860;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      border-radius: 0;  /* Remove rounded corners for better print alignment */
+  .resume-container .left-column {
+    background-color: #094860;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0; /* Remove rounded corners for better print alignment */
   }
 
   .right-column {
-      padding: 15px;
+    padding: 15px;
   }
 
   .profile-pic {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
   }
 
   /* Adjust font sizes and spacing for print */
-  h1, h2 {
-      font-size: 18px;
+  h1,
+  h2 {
+    font-size: 18px;
   }
 
-  p, li {
-      font-size: 10px;
-
+  p,
+  li {
+    font-size: 10px;
   }
 
   /* Ensure the content fits on one page */
-  html, body {
-      height: auto;
-      margin: 0;
-      padding: 0;
-      zoom: 0.9; /* Scale down content */
+  html,
+  body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    zoom: 0.9; /* Scale down content */
   }
 
   /* Avoid page breaks inside these sections */
-  .resume-container, .left-column, .right-column {
-      page-break-inside: avoid;
+  .resume-container,
+  .left-column,
+  .right-column {
+    page-break-inside: avoid;
   }
 
   /* Further reduce padding and margins for tighter content */
   .resume-container {
-      padding: 10px;
-      margin: 0;
+    padding: 10px;
+    margin: 0;
   }
 
-  .languages-section ul, .soft-skills-section ul, .skills-section ul {
-      padding: 0;
-      margin: 0;
+  .languages-section ul,
+  .soft-skills-section ul,
+  .skills-section ul {
+    padding: 0;
+    margin: 0;
   }
 
-  .languages-section ul li, .soft-skills-section ul li, .skills-section ul li {
-      font-size: 10px;
-      margin: 5px 0;
+  .languages-section ul li,
+  .soft-skills-section ul li,
+  .skills-section ul li {
+    font-size: 10px;
+    margin: 5px 0;
   }
 
-  #resumeLink a , #resumeLink{
+  #resumeLink a,
+  #resumeLink {
     visibility: hidden;
   }
 }
